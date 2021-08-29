@@ -12,7 +12,7 @@ namespace Practica01_Lab.Models
         public int Id { get; set; }
         
         [Column("name")]
-        public string Name { get; set; }
+        public string name { get; set; }
 
         [Column("categoria")]
         public string categoria { get; set; }

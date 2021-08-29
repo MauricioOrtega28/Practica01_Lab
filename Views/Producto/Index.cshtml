@@ -1,0 +1,57 @@
+@model IEnumerable<Practica01_Lab.Models.Producto>
+
+@{
+    ViewData["Title"] = "Productos";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a class="btn btn-secondary" asp-action="Create">Create New</a>    
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.categoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descuento)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach(var item in Model){
+       
+       <tr>
+           <td>
+                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td> 
+           <td>
+               @Html.DisplayFor(model => item.name)
+           </td>
+           <td>
+               @Html.DisplayFor(model => item.categoria)
+           </td>
+           <td>
+               @Html.DisplayFor(model => item.precio)
+           </td>
+           <td>
+               @Html.DisplayFor(model => item.descuento)
+           </td>
+
+       </tr> 
+}        
+    </tbody>
+</table>

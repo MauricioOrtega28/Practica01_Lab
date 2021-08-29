@@ -9,6 +9,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using Microsoft.EntityFrameworkCore;
+using Practica01_Lab.Data;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
+
 namespace Practica01_Lab
 {
     public class Startup
@@ -23,6 +27,8 @@ namespace Practica01_Lab
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ApplicationDBContext>(options => options.UseNpgsql
+                (Configuration.GetConnectionString("PostGressConnection")));
             services.AddControllersWithViews();
         }
 
