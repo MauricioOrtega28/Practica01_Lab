@@ -18,9 +18,9 @@ namespace Practica01_Lab.Models
         public string categoria { get; set; }
 
         [Column("precio")]
-        public string precio { get; set; }
+        public double precio { get; set; }
         
         [Column("descuento")]
-        public string descuento { get; set; }
+        public int descuento { get; set; }
     }
 }
