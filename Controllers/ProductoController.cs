@@ -45,7 +45,7 @@ namespace Practica01_Lab.Controllers
 
         [HttpPost]
 
-        public IActionResult Edit(int id,[Bind("Id,Email,Name,Phone,Comment,Gender")] Producto objProducto)
+        public IActionResult Edit(int id,[Bind("Id,name,categoria,precio,descuento")] Producto objProducto)
         {
             _context.Update(objProducto);
             _context.SaveChanges();
